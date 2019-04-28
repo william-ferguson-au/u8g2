@@ -1,5 +1,5 @@
-set(COMPONENT_ADD_INCLUDEDIRS csrc)
-set(COMPONENT_SRCS "csrc/u8x8_setup.c"
+SET (COMPONENT_ADD_INCLUDEDIRS csrc)
+SET (COMPONENT_SRCS "csrc/u8x8_setup.c"
                     "csrc/u8x8_u8toa.c"
                     "csrc/u8x8_d_ssd1306_96x16.c"
                     "csrc/u8g2_d_memory.c"
@@ -87,6 +87,5 @@ set(COMPONENT_SRCS "csrc/u8x8_setup.c"
                     "csrc/u8x8_u16toa.c"
                     "csrc/u8x8_d_a2printer.c"
                     "csrc/u8x8_d_st7565.c")
-set(COMPONENT_NAME ".")
 
 register_component()
