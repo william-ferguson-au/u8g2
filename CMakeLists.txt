@@ -1,4 +1,5 @@
-SET (COMPONENT_ADD_INCLUDEDIRS csrc)
+SET (COMPONENT_REQUIRES arduino-esp32)
+SET (COMPONENT_ADD_INCLUDEDIRS csrc cppsrc)
 SET (COMPONENT_SRCS "csrc/u8x8_setup.c"
                     "csrc/u8x8_u8toa.c"
                     "csrc/u8x8_d_ssd1306_96x16.c"
@@ -86,6 +87,12 @@ SET (COMPONENT_SRCS "csrc/u8x8_setup.c"
                     "csrc/u8x8_d_uc1701_mini12864.c"
                     "csrc/u8x8_u16toa.c"
                     "csrc/u8x8_d_a2printer.c"
-                    "csrc/u8x8_d_st7565.c")
+                    "csrc/u8x8_d_st7565.c"
+                    "cppsrc/U8x8lib.cpp"
+        )
 
 register_component()
+
+# Setting the U8X8_USE_PINS macro. See http://bbs.esp32.com/viewtopic.php?t=10316#p42460
+target_compile_definitions(${COMPONENT_TARGET} PUBLIC "-DU8X8_USE_PINS")
+
